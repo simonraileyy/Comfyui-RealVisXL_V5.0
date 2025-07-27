@@ -1,5 +1,5 @@
 # Use NVIDIA CUDA base image optimized for RunPod
-FROM nvidia/cuda:11.8-devel-ubuntu22.04
+FROM nvidia/cuda:12.4.0-cudnn8-devel-ubuntu22.04
 
 # Set environment variables
 ENV DEBIAN_FRONTEND=noninteractive
@@ -34,7 +34,7 @@ WORKDIR /app
 RUN git clone https://github.com/comfyanonymous/ComfyUI.git .
 
 # Install Python dependencies
-RUN pip3 install --no-cache-dir torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+RUN pip3 install --no-cache-dir torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
 RUN pip3 install --no-cache-dir -r requirements.txt
 
 # Additional dependencies for custom nodes and model downloading
