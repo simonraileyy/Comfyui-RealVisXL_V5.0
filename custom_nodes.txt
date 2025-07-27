@@ -1,0 +1,2 @@
+https://github.com/ltdrdata/ComfyUI-Manager
+https://github.com/if-ai/ComfyUI-IF_AI_HFDownloaderNode

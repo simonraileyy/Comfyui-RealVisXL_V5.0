@@ -1,0 +1,16 @@
+.git
+.gitignore
+*.md
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.vscode/
+.idea/
+*.log
+.DS_Store
+*.tmp
+*.temp
+run_local.sh
+build.sh

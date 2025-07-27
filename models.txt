@@ -1,0 +1,1 @@
+SG161222/RealVisXL_V5.0|models/checkpoints|RealVisXL_V5.0_fp16.safetensors
