@@ -51,6 +51,28 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 RUN pip3 install --no-cache-dir \
  groq \
  anthropic \
+ mistralai \
+ huggingface_hub \
+ pypdf2 \
+ pdf2image \
+ timm \
+ sentence-transformers \
+ byaldi \
+ opencv-python \
+ IPython \
+ python-dotenv \
+ nltk \
+ tiktoken \
+ matplotlib \
+ plotly \
+ kaleido \
+ networkx \
+ fastparquet \
+ pydantic \
+ rich \
+ supervision \
+ nano-graphrag \
+ qwen-vl-utils \
  huggingface-hub \
  opencv-python \
  transformers \
