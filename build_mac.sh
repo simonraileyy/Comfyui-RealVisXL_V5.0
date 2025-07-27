@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Configuration for Mac testing
-IMAGE_NAME="my-comfyui-mac"
+IMAGE_NAME="comfyui-mac"
 TAG="test"
 
 # Colors for output

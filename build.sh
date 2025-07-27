@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Configuration
-IMAGE_NAME="my-comfyui"
+IMAGE_NAME="comfyui"
 TAG="latest"
 REGISTRY="" # Set this if you want to push to a registry (e.g., "your-dockerhub-username/")
 

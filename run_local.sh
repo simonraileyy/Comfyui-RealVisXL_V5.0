@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Configuration
-IMAGE_NAME="my-comfyui"
+IMAGE_NAME="comfyui"
 TAG="latest"
 CONTAINER_NAME="comfyui-test"
 

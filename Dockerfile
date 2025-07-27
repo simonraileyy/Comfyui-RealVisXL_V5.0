@@ -1,5 +1,5 @@
 # Use NVIDIA CUDA base image optimized for RunPod
-FROM nvidia/cuda:12.4.0-cudnn8-devel-ubuntu22.04
+FROM ubuntu:22.04
 
 # Set environment variables
 ENV DEBIAN_FRONTEND=noninteractive
@@ -16,6 +16,7 @@ RUN apt-get update && apt-get install -y \
     python3-dev \
     git \
     wget \
+    gnupg \
     curl \
     build-essential \
     libgl1-mesa-glx \
@@ -26,6 +27,10 @@ RUN apt-get update && apt-get install -y \
     libgomp1 \
     git-lfs \
     && rm -rf /var/lib/apt/lists/*
+
+RUN wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.0-1_all.deb
+RUN dpkg -i cuda-keyring_1.0-1_all.deb
+RUN apt-get update && apt-get install -y cuda-toolkit-11-8
 
 # Create working directory
 WORKDIR /app
