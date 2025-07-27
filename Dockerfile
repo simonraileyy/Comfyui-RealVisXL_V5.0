@@ -57,6 +57,9 @@ RUN pip3 install --no-cache-dir \
     requests \
     tqdm
 
+# After your existing pip install lines, add:
+RUN pip3 install --no-cache-dir torchaudio --index-url https://download.pytorch.org/whl/cu118
+
 # Copy configuration files
 COPY custom_nodes.txt ./
 COPY models.txt ./
