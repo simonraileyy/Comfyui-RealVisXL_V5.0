@@ -51,6 +51,7 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 
 # Additional dependencies for custom nodes and model downloading
 RUN pip3 install --no-cache-dir \
+    anthropic \
     huggingface-hub \
     opencv-python \
     transformers \
