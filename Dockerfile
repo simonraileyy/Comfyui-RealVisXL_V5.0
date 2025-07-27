@@ -39,7 +39,12 @@ WORKDIR /app
 RUN git clone https://github.com/comfyanonymous/ComfyUI.git .
 
 # Install Python dependencies
-RUN pip3 install --no-cache-dir torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+RUN pip3 install --no-cache-dir \
+    torch==2.1.0 \
+    torchvision==0.16.0 \
+    torchaudio==2.1.0 \
+    --index-url https://download.pytorch.org/whl/cu118
+
 RUN pip3 install --no-cache-dir -r requirements.txt
 
 # Additional dependencies for custom nodes and model downloading
@@ -57,9 +62,9 @@ RUN pip3 install --no-cache-dir \
     requests \
     tqdm
 
-# After your existing pip install lines, add:
-RUN pip3 install --no-cache-dir torchaudio --index-url https://download.pytorch.org/whl/cu118
 
+
+RUN pip3 install --no-cache-dir xformers==0.0.22
 # Copy configuration files
 COPY custom_nodes.txt ./
 COPY models.txt ./
