@@ -28,9 +28,11 @@ RUN apt-get update && apt-get install -y \
     git-lfs \
     && rm -rf /var/lib/apt/lists/*
 
-RUN wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.0-1_all.deb
-RUN dpkg -i cuda-keyring_1.0-1_all.deb
-RUN apt-get update && apt-get install -y cuda-toolkit-11-8
+RUN wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.0-1_all.deb && \
+    dpkg -i cuda-keyring_1.0-1_all.deb && \
+    apt-get update && \
+    apt-get install -y cuda-toolkit-11-8 && \
+    rm cuda-keyring_1.0-1_all.deb
 
 # Create working directory
 WORKDIR /app
@@ -44,7 +46,7 @@ RUN pip3 install --no-cache-dir \
     torchvision==0.16.0 \
     torchaudio==2.1.0 \
     --index-url https://download.pytorch.org/whl/cu118
-
+    
 RUN pip3 install --no-cache-dir -r requirements.txt
 
 # Additional dependencies for custom nodes and model downloading
@@ -60,11 +62,9 @@ RUN pip3 install --no-cache-dir \
     groundingdino-py \
     ultralytics \
     requests \
-    tqdm
+    tqdm \
+    xformers==0.0.22
 
-
-
-RUN pip3 install --no-cache-dir xformers==0.0.22
 # Copy configuration files
 COPY custom_nodes.txt ./
 COPY models.txt ./
